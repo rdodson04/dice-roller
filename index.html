@@ -1,14 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Dice Roller</title>
-	<style>
-		
-    </style>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roll a Six-Sided Die</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+</style>
 </head>
 <body>
-	<h1>Dice Roller</h1>
-	
+
+<h1>Roll a Six-Sided Die</h1>
+
+<button onclick="displayDiceImage()">Roll</button>
+<div id="result"></div>
+<img id="die" src="./dice-images/#1.png" alt="Die Image">
+
+<script>
+function rollDie() {
+  var rollResult = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
+}
+function displayDiceImage(){
+  var resultElement = document.getElementById("result");
+  var dieImage = document.getElementById("die");
+  
+  // Display the result text
+  var rollresult = rollDie();
+
+  resultElement.textContent = "Rolled A: " + rollresult;
+  // Set the appropriate image based on the roll result
+  dieImage.setAttribute("src", "#"+ rollresult + ".png");
+}
+</script>
+
+
 </body>
 </html>
