@@ -1,42 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roll a Six-Sided Die</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-  }
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice-Roller-rd</title>
+    <link rel ="stylesheet" href="dice-roller.css"> 
+    <script src="dice-roller.js"></script>
+    
+  </head>
 
-</style>
-</head>
-<body>
-
-<h1>Roll a Six-Sided Die</h1>
-
-<button onclick="displayDiceImage()">Roll</button>
-<div id="result"></div>
-<img id="die" src="./dice-images/#1.png" alt="Die Image">
-
-<script>
-function rollDie() {
-  var rollResult = Math.floor(Math.random() * 6) + 1; // Generate a random number between 1 and 6
-}
-function displayDiceImage(){
-  var resultElement = document.getElementById("result");
-  var dieImage = document.getElementById("die");
-  
-  // Display the result text
-  var rollresult = rollDie();
-
-  resultElement.textContent = "Rolled A: " + rollresult;
-  // Set the appropriate image based on the roll result
-  dieImage.setAttribute("src", "#"+ rollresult + ".png");
-}
-</script>
-
-
-</body>
+  <body>
+    <div style="text-align: center;">
+      <h1>Dice Roller</h1>
+      
+      <button type="button" autofocus onload="displayDice()">ROLL</button>
+      
+      <p>Click The Button to Roll your Dice</p>
+      
+      Dice #1: <input id="result1" type="text" value="" size="3" disabled><br>
+      Dice #2: <input id="result2" type="text" value="" size="3" disabled><br>
+    </div>
+    
+  </body>
 </html>
